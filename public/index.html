@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="ca">
 <head>
-  <title>Convertidor</title>
-  <style>
-  textarea{
-    height: 20vh;
-    width: 30%;
-  }
-    </style>
+  <meta charset="UTF-8" />
+  <title>NodeProject PAU</title>
 </head>
-
 <body>
 
-  <textarea id="input"></textarea>
-  <button id="btn">Convertir</button>
-  <button id="xml">Convertir JSON a XML</button>
-  <button id="json">Convertir XML a JSON</button>
-
-  <textarea id="output"></textarea>
+  <textarea id="input" placeholder="Escriu text XML, JSON o nom de Pokémon..."></textarea>
   
+  <div class="actions">
+    <button id="btn">A MAJUSCULES</button>
+    <button id="btnToJSON">A JSON</button>
+    <button id="btnToXML">A XML</button>
+    <button id="btnPokemon" class="primary">Pokemon</button>
+  </div>
+
+  <textarea id="output" readonly placeholder="Resultat..."></textarea>
+  <div id="img-container"></div>
+
   <script src="app.js"></script>
   
 </body>
-
 </html>
