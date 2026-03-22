@@ -89,16 +89,7 @@ app.listen(PORT, () => {
 });
 
 
-const nomArrelsRandom = [
-  'datos',
-  'usuario',
-  'registro',
-  'info',
-  'resultado',
-  'contenedor',
-];
-
- const toXML = (data) => {
+const toXML = (data) => {
   // let textRebut = '{"key1":value1,"key2":value2,"key3":value3}';
   let textRebut = data;
   textRebut = textRebut.replaceAll('{', '');
@@ -107,13 +98,11 @@ const nomArrelsRandom = [
 
   let keyValues = textRebut.split(',');
 
-  const indiceAleatorio = Math.floor(Math.random() * nomArrelsRandom.length);
-  const arrelEscollida = nomArrelsRandom[indiceAleatorio];
 
   let xml = '';
   let continua = false;
 
-  xml += `<${arrelEscollida}>\n`;
+  xml += `<root>\n`;
 
   for (let i = 0; i < keyValues.length; i++) {
     const keyValue = keyValues[i].split(':');
@@ -129,13 +118,13 @@ const nomArrelsRandom = [
 
   continua
     ? (xml =
-        'Error: El formato de entrada debe ser JSON válido. \nEjemplo: {"nombre": "Juan"}')
-    : (xml += `</${arrelEscollida}>`);
+      'Error: El formato de entrada debe ser JSON válido. \nEjemplo: {"nombre": "Juan"}')
+    : (xml += `</root>`);
 
   return xml;
 };
 
- const toJson = (data) => {
+const toJson = (data) => {
   data = data.replace('<?xml version="1.0" encoding="UTF-8"?>', '').trim();
 
   let menorQ = [];
